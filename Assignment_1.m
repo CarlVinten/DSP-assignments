@@ -13,6 +13,9 @@ disp("Begin speaking.")
 recordblocking(recObj,recDuration);
 disp("End of recording.")
 audio_Recording = (getaudiodata(recObj));
+%save("audio","audio_Recording") %% commented out to not overwrite the file
+% For the person grading: while doing the assignment I used the
+% "audio_Recording" variable. but can be loaded from audio.mat.
 
 %% PLotting the synthesized and selfmade signal
 figure(1)
@@ -55,7 +58,7 @@ freq = freq(:);
 id = find(freq >= 3000, 1); %Find the index where the frequency is equal to 3000.
 
 subplot(1,2,2)
-semilogx(freq(1:id), 20*log10(abs(y(1:id))))
+semilogx(freq(1:id), 20*log10(2*abs(Y(1:id))))
 xlim([100 3000])
 xlabel("frequency [Hz]")
 ylabel("amplitude [dB]")
