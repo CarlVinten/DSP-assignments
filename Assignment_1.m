@@ -16,6 +16,9 @@ audio_Recording = (getaudiodata(recObj));
 %save("audio","audio_Recording") %% commented out to not overwrite the file
 % For the person grading: while doing the assignment I used the
 % "audio_Recording" variable. but can be loaded from audio.mat.
+% Use the code below to load the signal used in the assignment
+
+% audio_Recording = load("audio.mat")
 
 %% PLotting the synthesized and selfmade signal
 figure(1)
